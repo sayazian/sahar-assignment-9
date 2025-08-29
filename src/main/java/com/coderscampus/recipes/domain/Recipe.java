@@ -14,6 +14,32 @@ public class Recipe {
     private Boolean vegan;
     private Boolean vegetarian;
 
+    public Recipe(Integer cookingMinutes,
+                  Boolean dairyFree,
+                  Boolean glutenFree,
+                  String Instructions,
+                  Double preparationMinutes,
+                  Double pricePerServing,
+                  Integer readyInMinutes,
+                  Integer servings,
+                  Double spoonacularScore,
+                  String title,
+                  Boolean vegan,
+                  Boolean vegetarian) {
+        this.cookingMinutes = cookingMinutes;
+        this.dairyFree = dairyFree;
+        this.glutenFree = glutenFree;
+        this.Instructions = Instructions;
+        this.preparationMinutes = preparationMinutes;
+        this.pricePerServing = pricePerServing;
+        this.readyInMinutes = readyInMinutes;
+        this.servings = servings;
+        this.spoonacularScore = spoonacularScore;
+        this.title = title;
+        this.vegan = vegan;
+        this.vegetarian = vegetarian;
+    }
+
     public Integer getCookingMinutes() {
         return cookingMinutes;
     }
@@ -28,10 +54,6 @@ public class Recipe {
 
     public void setDairyFree(Boolean dairyFree) {
         this.dairyFree = dairyFree;
-    }
-
-    public Boolean getGlutenFree() {
-        return glutenFree;
     }
 
     public void setGlutenFree(Boolean glutenFree) {
@@ -108,5 +130,34 @@ public class Recipe {
 
     public void setVegetarian(Boolean vegetarian) {
         this.vegetarian = vegetarian;
+    }
+
+    public String printForHTML() {
+        return "<tr><td>" + title +
+                "</td><td>" + cookingMinutes +
+                "</td><td>" + dairyFree +
+                "</td><td>" + glutenFree +
+                "</td><td>" + Instructions +
+                "</td><td>" + preparationMinutes +
+                "</td><td>" + pricePerServing +
+                "</td><td>" + readyInMinutes +
+                "</td><td>" + servings +
+                "</td><td>" + spoonacularScore +
+                "</td><td>" + vegan +
+                "</td><td>" + vegetarian +
+                "</td></tr>";
+    }
+
+    public Boolean isGlutenFree() {
+        return glutenFree;
+    }
+    public Boolean isVegan() {
+        return vegan;
+    }
+    public Boolean isVeganAndGlutenFree() {
+        return vegan && glutenFree;
+    }
+    public Boolean isGVegetarian() {
+        return vegetarian;
     }
 }
