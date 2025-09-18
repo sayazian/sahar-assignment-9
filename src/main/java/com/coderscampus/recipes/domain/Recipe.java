@@ -4,7 +4,7 @@ public class Recipe {
     private Integer cookingMinutes;
     private Boolean dairyFree;
     private Boolean glutenFree;
-    private String Instructions;
+    private String instructions;
     private Double preparationMinutes;
     private Double pricePerServing;
     private Integer readyInMinutes;
@@ -17,7 +17,7 @@ public class Recipe {
     public Recipe(Integer cookingMinutes,
                   Boolean dairyFree,
                   Boolean glutenFree,
-                  String Instructions,
+                  String instructions,
                   Double preparationMinutes,
                   Double pricePerServing,
                   Integer readyInMinutes,
@@ -29,7 +29,7 @@ public class Recipe {
         this.cookingMinutes = cookingMinutes;
         this.dairyFree = dairyFree;
         this.glutenFree = glutenFree;
-        this.Instructions = Instructions;
+        this.instructions = instructions;
         this.preparationMinutes = preparationMinutes;
         this.pricePerServing = pricePerServing;
         this.readyInMinutes = readyInMinutes;
@@ -38,6 +38,9 @@ public class Recipe {
         this.title = title;
         this.vegan = vegan;
         this.vegetarian = vegetarian;
+    }
+
+    public Recipe() {
     }
 
     public Integer getCookingMinutes() {
@@ -56,16 +59,20 @@ public class Recipe {
         this.dairyFree = dairyFree;
     }
 
+    public Boolean getGlutenFree() {
+        return glutenFree;
+    }
+
     public void setGlutenFree(Boolean glutenFree) {
         this.glutenFree = glutenFree;
     }
 
     public String getInstructions() {
-        return Instructions;
+        return instructions;
     }
 
     public void setInstructions(String instructions) {
-        Instructions = instructions;
+        this.instructions = instructions;
     }
 
     public Double getPreparationMinutes() {
@@ -130,34 +137,5 @@ public class Recipe {
 
     public void setVegetarian(Boolean vegetarian) {
         this.vegetarian = vegetarian;
-    }
-
-    public String printForHTML() {
-        return "<tr><td>" + title +
-                "</td><td>" + cookingMinutes +
-                "</td><td>" + dairyFree +
-                "</td><td>" + glutenFree +
-                "</td><td>" + Instructions +
-                "</td><td>" + preparationMinutes +
-                "</td><td>" + pricePerServing +
-                "</td><td>" + readyInMinutes +
-                "</td><td>" + servings +
-                "</td><td>" + spoonacularScore +
-                "</td><td>" + vegan +
-                "</td><td>" + vegetarian +
-                "</td></tr>";
-    }
-
-    public Boolean isGlutenFree() {
-        return glutenFree;
-    }
-    public Boolean isVegan() {
-        return vegan;
-    }
-    public Boolean isVeganAndGlutenFree() {
-        return vegan && glutenFree;
-    }
-    public Boolean isGVegetarian() {
-        return vegetarian;
     }
 }

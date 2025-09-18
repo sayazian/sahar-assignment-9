@@ -4,6 +4,7 @@ import com.coderscampus.recipes.domain.Recipe;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,8 +12,8 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class FileService {
-    public final List<Recipe> RECIPES = this.parseRecipes("recipes.txt");
     public List<Recipe> parseRecipes(String csvFilePath) {
 
         List<Recipe> recipes = new ArrayList<>();
